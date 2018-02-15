@@ -1,6 +1,6 @@
 {
   "name": "first-project-tank",
-  "version": "0.0.6",
+  "version": "0.0.9",
   "description": "",
   "main": "index.js",
   "bin": {
@@ -20,11 +20,12 @@
   "devDependencies": {
     "babel-cli": "*",
     "babel-core": "*",
+    "babel-eslint": "*",
     "babel-preset-env": "*",
     "babel-preset-stage-0": "*",
     "eslint": "^4.17.0",
-    "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.8.0"
+    "eslint-config-airbnb-base": "*",
+    "eslint-plugin-import": "*"
   },
   "dependencies": {
     "readline-sync": "^1.4.8"
