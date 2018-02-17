@@ -1,24 +1,51 @@
 import readlineSync from 'readline-sync';
+import { car, cdr } from 'hexlet-pairs';
 
-const userName = (quest) => {
-  console.log(`Welcome to the Brain Games! \n${quest}\n`);
+const salute = (rect) => {
+  console.log(`Welcome to the Brain Games! \n${rect}\n`);
   const actual = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${actual}!\n`);
   return actual;
 };
-export default userName;
 
-const rand = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+export default salute;
 
-export const even = () => {
-  const name = userName('Answer yes if number even otherwise answer "no".');
-  for (let i = 1; i < 4; i += 1) {
-    const getRand = rand(1, 100);
-    const quest = readlineSync.question(`Question: ${getRand} \nYour answer: `);
-    if (getRand % 2 !== 0 && quest !== 'no') {
-      return console.log(`${quest} is wrong answer ;(. Correct answer was 'no'. \nLet's try again, ${name}!\n`);
-    } if (getRand % 2 === 0 && quest !== 'yes') {
-      return console.log(`${quest} is wrong answer ;(. Correct answer was "yes". \nLet's try again, ${name}!\n`);
+export const random = (min, max) => Math.ceil(Math.random() * (max - min)) + min;
+
+export const calculator = (str, a, b) => {
+  let result;
+  switch (str) {
+    case '+':
+      result = a + b;
+      break;
+    case '-':
+      result = a - b;
+      break;
+    case '*':
+      result = a * b;
+      break;
+    default:
+      return 'Error!';
+  } return result;
+};
+
+export const strOperation = (str) => {
+  const i = random(0, 2);
+  return str[i];
+};
+
+
+const yourAns = () => readlineSync.question('Your answer: ');
+
+export const func = (game, rules) => {
+  const user = salute(game);
+  const inc = 3;
+  for (let i = 0; i < inc; i += 1) {
+    const rule = rules();
+    console.log(`${car(rule)}`);
+    const answer = yourAns();
+    if (answer !== String(cdr(rule))) {
+      return console.log(`\n"${answer}" is wrong answer ;(. Correct answer was "${cdr(rule)}". \nLet's try again, ${user}!\n`);
     } console.log('Correct!');
-  } return console.log(`Congratulations, ${name}!\n`);
+  } return console.log(`Congratulations, ${user}!\n`);
 };
