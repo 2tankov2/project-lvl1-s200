@@ -3,7 +3,7 @@ import { cons } from '../../node_modules/hexlet-pairs';
 
 const namegame = 'Find the greatest common divisor of given numbers.';
 
-const bassis = () => {
+const equal = () => {
   const num1 = random(1, 10);
   const num2 = random(1, 10);
   const ans = gcd(num1, num2);
@@ -11,6 +11,6 @@ const bassis = () => {
   return cons(text, ans);
 };
 
-const nodgame = () => func(namegame, bassis);
+const nodgame = () => func(namegame, equal);
 
 export default nodgame;

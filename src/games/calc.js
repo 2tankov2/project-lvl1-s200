@@ -3,7 +3,7 @@ import { cons } from '../../node_modules/hexlet-pairs';
 
 const namegame = 'What is the result of the expression?';
 
-const bassis = () => {
+const equal = () => {
   const num1 = random(1, 10);
   const num2 = random(1, 10);
   const operation = strOperation('+-*');
@@ -12,6 +12,6 @@ const bassis = () => {
   return cons(text, ans);
 };
 
-const calcgame = () => func(namegame, bassis);
+const calcgame = () => func(namegame, equal);
 
 export default calcgame;
