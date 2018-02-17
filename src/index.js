@@ -34,6 +34,11 @@ export const strOperation = (str) => {
   return str[i];
 };
 
+export const gcd = (n, m) => {
+  if (m === 0) {
+    return n;
+  } return gcd(m, n % m);
+};
 
 const yourAns = () => readlineSync.question('Your answer: ');
 
