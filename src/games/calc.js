@@ -1,9 +1,9 @@
 import { func, random, calculator, strOperation } from '../index';
 import { cons } from '../../node_modules/hexlet-pairs';
 
-const namegame = 'What is the result of the expression?';
+const task = 'What is the result of the expression?';
 
-const feature = () => {
+const showResult = () => {
   const num1 = random(1, 10);
   const num2 = random(1, 10);
   const operation = strOperation('+-*');
@@ -12,6 +12,6 @@ const feature = () => {
   return cons(text, ans);
 };
 
-const calcgame = () => func(namegame, feature);
+const calcgame = () => func(task, showResult);
 
 export default calcgame;

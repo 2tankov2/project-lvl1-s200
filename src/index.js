@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { car, cdr } from 'hexlet-pairs';
+import { car, cdr, cons } from 'hexlet-pairs';
 
 const salute = (rect) => {
   console.log(`Welcome to the Brain Games! \n${rect}\n`);
@@ -55,6 +55,16 @@ export const balance = (num) => {
       return res;
     } return iter(count - Math.floor(count / acc), acc - 1, res + String(Math.floor(count / acc)));
   }; return iter(sum(num), strN.length, '');
+};
+
+export const pro = (step, k) => {
+  const iter = (count, acc, result, skip) => {
+    if (acc === 0) {
+      return cons(skip, result);
+    } if (acc === skip) {
+      return iter(count + step, acc - 1, `${result} .. `, count);
+    } return iter(count + step, acc - 1, `${result} ${count} `, skip);
+  }; return iter(random(1, 100), k, '', random(1, k));
 };
 
 const yourAns = () => readlineSync.question('Your answer: ');
