@@ -3,13 +3,13 @@ import { cons } from '../../node_modules/hexlet-pairs';
 
 const namegame = 'Answer "yes" if number even otherwise answer "no".';
 
-const equal = () => {
+const feature = () => {
   const randNum = random(1, 100);
   const ans = (randNum % 2 !== 0) ? 'no' : 'yes';
-  const text = (`Question: ${randNum}`);
+  const text = (`${randNum}`);
   return cons(text, ans);
 };
 
-const evengame = () => func(namegame, equal);
+const evengame = () => func(namegame, feature);
 
 export default evengame;

@@ -34,10 +34,27 @@ export const strOperation = (str) => {
   return str[i];
 };
 
-export const gcd = (n, m) => {
+export const nod = (n, m) => {
   if (m === 0) {
     return n;
-  } return gcd(m, n % m);
+  } return nod(m, n % m);
+};
+
+const sum = (a) => {
+  const strNum = String(a);
+  let result = 0;
+  for (let i = 0; i < strNum.length; i += 1) {
+    result += Number(strNum[i]);
+  } return result;
+};
+
+export const balance = (num) => {
+  const strN = String(num);
+  const iter = (count, acc, res) => {
+    if (acc === 0) {
+      return res;
+    } return iter(count - Math.floor(count / acc), acc - 1, res + String(Math.floor(count / acc)));
+  }; return iter(sum(num), strN.length, '');
 };
 
 const yourAns = () => readlineSync.question('Your answer: ');
@@ -47,7 +64,7 @@ export const func = (game, rules) => {
   const inc = 3;
   for (let i = 0; i < inc; i += 1) {
     const rule = rules();
-    console.log(`${car(rule)}`);
+    console.log(`Question: ${car(rule)}`);
     const answer = yourAns();
     if (answer !== String(cdr(rule))) {
       return console.log(`\n"${answer}" is wrong answer ;(. Correct answer was "${cdr(rule)}". \nLet's try again, ${user}!\n`);

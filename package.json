@@ -1,13 +1,14 @@
 {
   "name": "first-project-tank",
-  "version": "0.0.14",
+  "version": "0.0.16",
   "description": "",
   "main": "index.js",
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
     "brain-even": "dist/bin/brain-even.js",
     "brain-calc": "dist/bin/brain-calc.js",
-    "brain-nod": "dist/bin/brain-nod.js"
+    "brain-nod": "dist/bin/brain-nod.js",
+    "brain-balance": "dist/bin/brain-balance.js"
   },
   "files": [
     "dist"
