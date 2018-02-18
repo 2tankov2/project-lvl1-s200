@@ -67,6 +67,18 @@ export const pro = (step, k) => {
   }; return iter(random(1, 100), k, '', random(1, k));
 };
 
+export const isPrime = (n) => {
+  if (n < 2) {
+    return false;
+  } let i = 2;
+  while (i <= (n / 2)) {
+    if (n % i === 0) {
+      return false;
+    } i += 1;
+  } return true;
+};
+
+
 const yourAns = () => readlineSync.question('Your answer: ');
 
 export const func = (game, rules) => {
